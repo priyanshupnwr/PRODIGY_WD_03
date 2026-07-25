@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #2563eb, #1e3a8a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #1e293b;
+}
+
+.container {
+    width: 100%;
+    max-width: 520px;
+    text-align: center;
+}
+
+h1 {
+    color: #fff;
+    font-size: 2.3rem;
+    margin-bottom: 15px;
+}
+
+.status {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.board {
+    background: #fff;
+    border-radius: 18px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .18);
+}
+
+.cell {
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 12px;
+    background: #f8fafc;
+    font-size: 2.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .25s ease;
+    color: #1e293b;
+}
+
+.cell:hover:not(:disabled) {
+    background: #dbeafe;
+}
+
+.cell:disabled {
+    cursor: not-allowed;
+}
+
+.cell.x {
+    color: #2563eb;
+}
+
+.cell.o {
+    color: #ef4444;
+}
+
+.cell.win {
+    background: #22c55e;
+    color: #fff;
+}
+
+.scoreboard {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.score-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .12);
+}
+
+.score-card h3 {
+    font-size: .95rem;
+    margin-bottom: 8px;
+    color: #475569;
+}
+
+.score-card span {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #2563eb;
+}
+
+.controls {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    flex: 1;
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #fff;
+    cursor: pointer;
+    transition: .25s ease;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.primary {
+    background: #2563eb;
+}
+
+.primary:hover {
+    background: #1d4ed8;
+}
+
+.danger {
+    background: #ef4444;
+}
+
+.danger:hover {
+    background: #dc2626;
+}
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .status {
+        font-size: 1rem;
+    }
+
+    .board {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .cell {
+        font-size: 2.2rem;
+    }
+
+    .scoreboard {
+        grid-template-columns: 1fr;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+}
